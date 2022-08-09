@@ -1,0 +1,4 @@
+/Elelab_AI/material/*
+/Elelab_AI/video/*
+!/Elelab_AI/material/download.txt
+!/Elelab_AI/material/*.pdf
