@@ -42,20 +42,18 @@ ax = Axes3D(fig)
 
 ax.set_zlim(0, 2)
 
-for w in ws:  # 每次取不同的w
+for b in bs:  # 每次取不同的w
 	es = []
-	for b in bs:
+	for w in ws:
 		y_pre = w*xs+b
 		#得到w和b的关系
 		e = (1/m)*np.sum((ys-y_pre)**2)
 		es.append(e)
 	#plt.plot(ws,es)
-	figure = ax.plot(bs, es, w, zdir='y')
+    # ws,es是矩阵，而b是单个值，相当于截面取ws和es，b不断改变，导致截面成立体。
+	figure = ax.plot(ws, es, b, zdir='y')
 
 
 #显示图像
 plt.show()
 
-
-
-# %%
